@@ -1,11 +1,17 @@
 import "./App.css";
+import Phonebook from "components/Phonebook/Phonebook";
 
-function App() {
-  return (
-    <div className="App">
+import React, { Component } from "react";
 
-    </div>
-  );
+export default class App extends Component {
+  formSubmitHandler = (data) => {
+    console.log(data);
+  };
+  render() {
+    return (
+      <div className="App">
+        <Phonebook onSubmit={this.formSubmitHandler} />
+      </div>
+    );
+  }
 }
-
-export default App;
