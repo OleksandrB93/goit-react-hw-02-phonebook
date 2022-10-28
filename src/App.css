@@ -3,7 +3,11 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  background-color:#e7e7e7;
+  background-color:#cac9c9;
+  display: flex;
+  justify-content: center;
+  width: 768px;
+  margin: 0 auto;
 }
 
 h1,
@@ -28,3 +32,4 @@ img {
   max-width: 100%;
   height: auto;
 }
+

@@ -1,41 +1,42 @@
 import { nanoid } from "nanoid";
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
+
+import { NameLabel,AddContactBtn, Input } from "./Phonebook.styled";
+
 
 export default class Phonebook extends Component {
   state = {
-    contacts: [{id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'}],
     name: "",
     phoneNumber: "",
+    img:"https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
   };
 
   nameInputId = nanoid();
   phoneNumberInputId = nanoid();
 
-  handleChange = (evt) => {
-    const { name, value } = evt.target;
+  handleChange = (event) => {
+    const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (evt) => {
-    evt.preventDefault();
+  handleSubmit = (event) => {
+    event.preventDefault();
 
     this.props.onSubmit(this.state);
     this.resetSubmit();
   };
 
   resetSubmit = () => {
-    this.setState({ name: "", phoneNumber: "" });
+    this.setState({ name: "", phoneNumber: "", img:"" });
   };
   render() {
     return (
       <div>
         <form action="" onSubmit={this.handleSubmit}>
-          <label htmlFor={this.nameInputId}>
+          <NameLabel htmlFor={this.nameInputId}>
             Name:
-            <input
+            <Input
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -45,10 +46,10 @@ export default class Phonebook extends Component {
               onChange={this.handleChange}
               id={this.nameInputId}
             />
-          </label>
+          </NameLabel>
           <label htmlFor={this.phoneNumberInputId}>
             Phone number:
-            <input
+            <Input
               type="tel"
               name="phoneNumber"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -59,9 +60,14 @@ export default class Phonebook extends Component {
               id={this.phoneNumberInputId}
             />
           </label>
-          <button tupe="submit">Add contact</button>
+          <AddContactBtn tupe="submit">Add contact</AddContactBtn>
         </form>
       </div>
     );
   }
 }
+Phonebook.prototypes = {
+    name: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  };
