@@ -1,7 +1,7 @@
 import "./App.css";
 import { nanoid } from "nanoid";
 import React, { Component } from "react";
-import { H1,  H2} from "App.styled";
+import {AppContainer, H1,  H2} from "App.styled";
 
 import Phonebook from "components/Phonebook/Phonebook";
 import SearchInput from "components/SearchInput/SearchInput";
@@ -24,6 +24,7 @@ export default class App extends Component {
       phoneNumber,
       img,
     };
+    
     const findContact = this.state.contacts.find((contact) =>
       contact.name.toLowerCase().includes(name.toLowerCase())
     );
@@ -54,7 +55,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <AppContainer>
         <H1>Phonebook</H1>
         <Phonebook onSubmit={this.formSubmitHandler} />
 
@@ -68,7 +69,7 @@ export default class App extends Component {
           contacts={this.findContacts()}
           deleteContact={this.deleteContact}
         />
-      </div>
+      </AppContainer>
     );
   }
 }

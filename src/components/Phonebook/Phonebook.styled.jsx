@@ -21,14 +21,18 @@ export const Input = styled.input`
 export const AddContactBtn = styled.button`
   max-height: 25px;
   margin-left: 10px;
-  /* margin-right: px; */
   border: 1px solid #a7a7a7ec;
   border-radius: 5px;
   transition: all 250ms;
 
   &:hover {
     color: #ffffff;
-    background-color: #000000;
+    background: rgb(255, 111, 174);
+    background: linear-gradient(
+      27deg,
+      rgba(255, 111, 174, 1) 0%,
+      rgba(98, 170, 255, 1) 100%
+    );
     box-shadow: rgb(255, 254, 254) 0px 0px 3px;
   }
 `;

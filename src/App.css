@@ -3,7 +3,6 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  background-color:#cac9c9;
   display: flex;
   justify-content: center;
   min-width: 400px;
@@ -32,4 +31,3 @@ img {
   max-width: 100%;
   height: auto;
 }
-

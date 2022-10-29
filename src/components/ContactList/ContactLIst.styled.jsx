@@ -14,12 +14,17 @@ export const Item = styled.li`
   margin: 5px 0;
   width: 100%;
   border-radius: 5px;
-  background-color: #e8e8e8;
-  box-shadow: rgb(0, 0, 0) 0px 3px 5px;
+  background-color: #ffffff;
+  box-shadow: rgb(0, 0, 0) 0px 1px 5px;
   transition: all 300ms;
 
   &:hover {
-    background-color: #6e6e6e;
+    background: rgb(255, 111, 174);
+    background: linear-gradient(
+      27deg,
+      rgba(255, 111, 174, 1) 0%,
+      rgba(98, 170, 255, 1) 100%
+    );
     scale: 1.05;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.885) 0px 7px 10px;
@@ -46,13 +51,18 @@ export const DeleteBtn = styled.button`
   margin-right: 15px;
   border: 1px solid #a7a7a7ec;
   border-radius: 5px;
- 
+
   /* background-color: transparent; */
   transition: all 250ms;
 
   &:hover {
     color: #ffffff;
-    background-color: #000000;
+    background: rgb(255, 111, 174);
+    background: linear-gradient(
+      27deg,
+      rgba(255, 111, 174, 1) 0%,
+      rgba(98, 170, 255, 1) 100%
+    );
     box-shadow: rgb(255, 254, 254) 0px 0px 3px;
   }
 `;
