@@ -30,7 +30,7 @@ export const Item = styled.li`
     box-shadow: rgba(0, 0, 0, 0.885) 0px 7px 10px;
   }
   &:hover img {
-    box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 15px;
+    box-shadow: rgba(255, 255, 255, 0.9) 0px 0px 10px;
   }
 `;
 export const Avatar = styled.img`
